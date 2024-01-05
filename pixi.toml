@@ -1,0 +1,36 @@
+[project]
+name = "pixi_gazebodistro"
+version = "0.1.0"
+description = "Add a short description here"
+authors = ["Michael Carroll <mjcarroll@intrinsic.ai>"]
+channels = ["conda-forge"]
+platforms = ["linux-64", "win-64", "osx-64", "osx-arm64", "linux-aarch64"]
+
+[tasks]
+sync = {cmd = "helper.py sync"}
+colcon = {cmd = "helper.py colcon"}
+build = {cmd = "helper.py colcon build"}
+test = {cmd = "helper.py colcon test"}
+clean = {cmd = "helper.py clean"}
+
+[dependencies]
+pybind11 = "2.11.1.*"
+tinyxml2 = "9.0.0.*"
+protobuf = "4.24.4.*"
+freeimage = "3.18.0.*"
+assimp = "5.3.1.*"
+ffmpeg = "6.1.1.*"
+gts = "0.7.6.*"
+glib = "2.78.3.*"
+cppzmq = "4.10.0.*"
+zeromq = "4.3.5.*"
+
+[build-dependencies]
+ninja = "1.11.1.*"
+make = "4.3.*"
+cmake = "3.27.6.*"
+git = "2.42.0.*"
+vcstool = "0.3.0.*"
+colcon-common-extensions = "0.3.0.*"
+compilers = "1.6.0.*"
+pkg-config = "0.29.2.*"

@@ -1,0 +1,21 @@
+{
+  "build": {
+    "merge-install": true,
+    "cmake-args": [
+      "-GNinja",
+      "--no-warn-unused-cli",
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+      "-DCMAKE_BUILD_WITH_INSTALL_RPATH=ON",
+    ],
+    "event-handlers": [
+      "console_cohesion+",
+      "console_package_list+",
+    ]
+  },
+  "test": {
+    "merge-install": true,
+    "event-handlers": [
+      "console_direct+",
+    ]
+  }
+}
