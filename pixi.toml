@@ -38,6 +38,18 @@ libzip = "*"
 yaml = "*"
 qt-main = "*"
 
+[target.linux-64.dependencies]
+libglu = "*"
+mesa-libgl-devel-cos7-x86_64 = "*"
+mesa-libegl-devel-cos7-x86_64 = "*"
+libglvnd-devel-cos7-x86_64 = "*"
+
+[target.linux-aarch64.dependencies]
+libglu = "*"
+mesa-libgl-devel-cos7-aarch64 = "*"
+mesa-libegl-devel-cos7-aarch64 = "*"
+libglvnd-devel-cos7-aarch64 = "*"
+
 [target.win-64.dependencies]
 dlfcn-win32 = "*"
 

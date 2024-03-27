@@ -7,6 +7,7 @@ environments:
       linux-64:
       - conda: https://conda.anaconda.org/conda-forge/linux-64/_libgcc_mutex-0.1-conda_forge.tar.bz2
       - conda: https://conda.anaconda.org/conda-forge/linux-64/_openmp_mutex-4.5-2_gnu.tar.bz2
+      - conda: https://conda.anaconda.org/conda-forge/noarch/_sysroot_linux-64_curr_repodata_hack-3-h69a702a_14.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/alsa-lib-1.2.11-hd590300_1.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/aom-3.7.1-h59595ed_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/argcomplete-3.2.3-pyhd8ed1ab_0.conda
@@ -130,7 +131,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/linux-64/jsoncpp-1.9.5-h4bd325d_1.tar.bz2
       - conda: https://conda.anaconda.org/conda-forge/linux-64/jxrlib-1.1-hd590300_3.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/kealib-1.5.3-h2f55d51_0.conda
-      - conda: https://conda.anaconda.org/conda-forge/noarch/kernel-headers_linux-64-2.6.32-he073ed8_17.conda
+      - conda: https://conda.anaconda.org/conda-forge/noarch/kernel-headers_linux-64-3.10.0-h4a8ded7_14.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/keyutils-1.6.1-h166bdaf_0.tar.bz2
       - conda: https://conda.anaconda.org/conda-forge/linux-64/krb5-1.21.2-h659d440_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/lame-3.100-h166bdaf_1003.tar.bz2
@@ -154,6 +155,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/linux-64/libcurl-8.6.0-hca28451_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/libdeflate-1.19-hd590300_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/libdrm-2.4.120-hd590300_0.conda
+      - conda: https://conda.anaconda.org/conda-forge/noarch/libdrm-cos7-x86_64-2.4.97-h9b0a68f_1105.tar.bz2
       - conda: https://conda.anaconda.org/conda-forge/linux-64/libedit-3.1.20191231-he28a2e2_2.tar.bz2
       - conda: https://conda.anaconda.org/conda-forge/linux-64/libev-4.33-hd590300_2.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/libevent-2.1.12-hf998b51_1.conda
@@ -167,6 +169,14 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/linux-64/libgfortran-ng-13.2.0-h69a702a_5.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/libgfortran5-13.2.0-ha4646dd_5.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/libglib-2.80.0-hf2295e7_1.conda
+      - conda: https://conda.anaconda.org/conda-forge/linux-64/libglu-9.0.0-hac7e632_1003.conda
+      - conda: https://conda.anaconda.org/conda-forge/noarch/libglvnd-core-devel-cos7-x86_64-1.0.1-h9b0a68f_1105.tar.bz2
+      - conda: https://conda.anaconda.org/conda-forge/noarch/libglvnd-cos7-x86_64-1.0.1-h9b0a68f_1105.tar.bz2
+      - conda: https://conda.anaconda.org/conda-forge/noarch/libglvnd-devel-cos7-x86_64-1.0.1-h9b0a68f_1105.tar.bz2
+      - conda: https://conda.anaconda.org/conda-forge/noarch/libglvnd-egl-cos7-x86_64-1.0.1-h9b0a68f_1105.tar.bz2
+      - conda: https://conda.anaconda.org/conda-forge/noarch/libglvnd-gles-cos7-x86_64-1.0.1-h9b0a68f_1105.tar.bz2
+      - conda: https://conda.anaconda.org/conda-forge/noarch/libglvnd-glx-cos7-x86_64-1.0.1-h9b0a68f_1105.tar.bz2
+      - conda: https://conda.anaconda.org/conda-forge/noarch/libglvnd-opengl-cos7-x86_64-1.0.1-h9b0a68f_1105.tar.bz2
       - conda: https://conda.anaconda.org/conda-forge/linux-64/libgomp-13.2.0-h807b86a_5.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/libgoogle-cloud-2.22.0-h9be4e54_1.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/libgoogle-cloud-storage-2.22.0-hc7a4891_1.conda
@@ -232,6 +242,13 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/linux-64/lz4-c-1.9.4-hcb278e6_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/lzo-2.10-h516909a_1000.tar.bz2
       - conda: https://conda.anaconda.org/conda-forge/linux-64/make-4.3-hd18ef5c_1.tar.bz2
+      - conda: https://conda.anaconda.org/conda-forge/noarch/mesa-khr-devel-cos7-x86_64-18.3.4-h9b0a68f_1105.tar.bz2
+      - conda: https://conda.anaconda.org/conda-forge/noarch/mesa-libegl-cos7-x86_64-18.3.4-h9b0a68f_1105.tar.bz2
+      - conda: https://conda.anaconda.org/conda-forge/noarch/mesa-libegl-devel-cos7-x86_64-18.3.4-h9b0a68f_1105.tar.bz2
+      - conda: https://conda.anaconda.org/conda-forge/noarch/mesa-libgbm-cos7-x86_64-18.3.4-h9b0a68f_1105.tar.bz2
+      - conda: https://conda.anaconda.org/conda-forge/noarch/mesa-libgl-cos7-x86_64-18.3.4-h9b0a68f_1105.tar.bz2
+      - conda: https://conda.anaconda.org/conda-forge/noarch/mesa-libgl-devel-cos7-x86_64-18.3.4-h9b0a68f_1105.tar.bz2
+      - conda: https://conda.anaconda.org/conda-forge/noarch/mesa-libglapi-cos7-x86_64-18.3.4-h9b0a68f_1105.tar.bz2
       - conda: https://conda.anaconda.org/conda-forge/linux-64/minizip-4.0.5-h0ab5242_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/mpg123-1.32.4-h59595ed_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/mysql-common-8.0.33-hf1915f5_6.conda
@@ -291,7 +308,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/linux-64/sqlite-3.45.2-h2c6b66d_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/svt-av1-1.8.0-h59595ed_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/swig-4.2.1-hc9a1274_0.conda
-      - conda: https://conda.anaconda.org/conda-forge/noarch/sysroot_linux-64-2.12-he073ed8_17.conda
+      - conda: https://conda.anaconda.org/conda-forge/noarch/sysroot_linux-64-2.17-h4a8ded7_14.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/tbb-2021.11.0-h00ab1b0_1.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/tiledb-2.21.1-h99d63bd_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/tinyxml2-10.0.0-h59595ed_0.conda
@@ -488,6 +505,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/linux-aarch64/libcups-2.3.3-h405e4a8_4.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-aarch64/libcurl-8.6.0-h4e8248e_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-aarch64/libdeflate-1.19-h31becfc_0.conda
+      - conda: https://conda.anaconda.org/conda-forge/noarch/libdrm-cos7-aarch64-2.4.97-h9b0a68f_1105.tar.bz2
       - conda: https://conda.anaconda.org/conda-forge/linux-aarch64/libedit-3.1.20191231-he28a2e2_2.tar.bz2
       - conda: https://conda.anaconda.org/conda-forge/linux-aarch64/libev-4.33-h31becfc_2.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-aarch64/libevent-2.1.12-h4ba1bb4_1.conda
@@ -501,6 +519,14 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/linux-aarch64/libgfortran-ng-13.2.0-he9431aa_5.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-aarch64/libgfortran5-13.2.0-h582850c_5.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-aarch64/libglib-2.80.0-h9d8fbc1_1.conda
+      - conda: https://conda.anaconda.org/conda-forge/linux-aarch64/libglu-9.0.0-hf4b6fbe_1003.conda
+      - conda: https://conda.anaconda.org/conda-forge/noarch/libglvnd-core-devel-cos7-aarch64-1.0.1-h9b0a68f_1105.tar.bz2
+      - conda: https://conda.anaconda.org/conda-forge/noarch/libglvnd-cos7-aarch64-1.0.1-h9b0a68f_1105.tar.bz2
+      - conda: https://conda.anaconda.org/conda-forge/noarch/libglvnd-devel-cos7-aarch64-1.0.1-h9b0a68f_1105.tar.bz2
+      - conda: https://conda.anaconda.org/conda-forge/noarch/libglvnd-egl-cos7-aarch64-1.0.1-h9b0a68f_1105.tar.bz2
+      - conda: https://conda.anaconda.org/conda-forge/noarch/libglvnd-gles-cos7-aarch64-1.0.1-h9b0a68f_1105.tar.bz2
+      - conda: https://conda.anaconda.org/conda-forge/noarch/libglvnd-glx-cos7-aarch64-1.0.1-h9b0a68f_1105.tar.bz2
+      - conda: https://conda.anaconda.org/conda-forge/noarch/libglvnd-opengl-cos7-aarch64-1.0.1-h9b0a68f_1105.tar.bz2
       - conda: https://conda.anaconda.org/conda-forge/linux-aarch64/libgomp-13.2.0-hf8544c7_5.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-aarch64/libgoogle-cloud-2.22.0-hd739bbb_1.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-aarch64/libgoogle-cloud-storage-2.22.0-hdb39181_1.conda
@@ -563,6 +589,13 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/linux-aarch64/lz4-c-1.9.4-hd600fc2_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-aarch64/lzo-2.10-h516909a_1000.tar.bz2
       - conda: https://conda.anaconda.org/conda-forge/linux-aarch64/make-4.3-h309ac5b_1.tar.bz2
+      - conda: https://conda.anaconda.org/conda-forge/noarch/mesa-khr-devel-cos7-aarch64-18.3.4-h9b0a68f_1105.tar.bz2
+      - conda: https://conda.anaconda.org/conda-forge/noarch/mesa-libegl-cos7-aarch64-18.3.4-h9b0a68f_1105.tar.bz2
+      - conda: https://conda.anaconda.org/conda-forge/noarch/mesa-libegl-devel-cos7-aarch64-18.3.4-h9b0a68f_1105.tar.bz2
+      - conda: https://conda.anaconda.org/conda-forge/noarch/mesa-libgbm-cos7-aarch64-18.3.4-h9b0a68f_1105.tar.bz2
+      - conda: https://conda.anaconda.org/conda-forge/noarch/mesa-libgl-cos7-aarch64-18.3.4-h9b0a68f_1105.tar.bz2
+      - conda: https://conda.anaconda.org/conda-forge/noarch/mesa-libgl-devel-cos7-aarch64-18.3.4-h9b0a68f_1105.tar.bz2
+      - conda: https://conda.anaconda.org/conda-forge/noarch/mesa-libglapi-cos7-aarch64-18.3.4-h9b0a68f_1105.tar.bz2
       - conda: https://conda.anaconda.org/conda-forge/linux-aarch64/minizip-4.0.5-hb75dd74_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-aarch64/mpg123-1.32.4-h2f0025b_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-aarch64/mysql-common-8.0.33-hb6794ad_6.conda
@@ -1558,6 +1591,20 @@ packages:
   license_family: BSD
   size: 23712
   timestamp: 1650670790230
+- kind: conda
+  name: _sysroot_linux-64_curr_repodata_hack
+  version: '3'
+  build: h69a702a_14
+  build_number: 14
+  subdir: noarch
+  noarch: generic
+  url: https://conda.anaconda.org/conda-forge/noarch/_sysroot_linux-64_curr_repodata_hack-3-h69a702a_14.conda
+  sha256: 0dbeaddc3d5134b5336c52ac05642533b8d1ba2e1316aa92981f4cf5b5388de0
+  md5: 38d211c448a67f12fe693fe25df4da23
+  license: LGPL-2.0-or-later AND LGPL-2.0-or-later WITH exceptions AND GPL-2.0-or-later AND MPL-2.0
+  license_family: GPL
+  size: 21169
+  timestamp: 1708000801681
 - kind: conda
   name: _sysroot_linux-aarch64_curr_repodata_hack
   version: '4'
@@ -9692,20 +9739,22 @@ packages:
   timestamp: 1703116732437
 - kind: conda
   name: kernel-headers_linux-64
-  version: 2.6.32
-  build: he073ed8_17
-  build_number: 17
+  version: 3.10.0
+  build: h4a8ded7_14
+  build_number: 14
   subdir: noarch
   noarch: generic
-  url: https://conda.anaconda.org/conda-forge/noarch/kernel-headers_linux-64-2.6.32-he073ed8_17.conda
-  sha256: fb39d64b48f3d9d1acc3df208911a41f25b6a00bd54935d5973b4739a9edd5b6
-  md5: d731b543793afc0433c4fd593e693fce
+  url: https://conda.anaconda.org/conda-forge/noarch/kernel-headers_linux-64-3.10.0-h4a8ded7_14.conda
+  sha256: 604b9345a7a1474b7eb33260e382446754d16eed754b853d7571d0e39bfc7737
+  md5: f6c14886b1695a2462d296176e831080
+  depends:
+  - _sysroot_linux-64_curr_repodata_hack 3.*
   constrains:
-  - sysroot_linux-64 ==2.12
+  - sysroot_linux-64 ==2.17
   license: LGPL-2.0-or-later AND LGPL-2.0-or-later WITH exceptions AND GPL-2.0-or-later AND MPL-2.0
   license_family: GPL
-  size: 710627
-  timestamp: 1708000830116
+  size: 945316
+  timestamp: 1708000808506
 - kind: conda
   name: kernel-headers_linux-aarch64
   version: 4.18.0
@@ -11549,6 +11598,38 @@ packages:
   size: 303067
   timestamp: 1708374304366
 - kind: conda
+  name: libdrm-cos7-aarch64
+  version: 2.4.97
+  build: h9b0a68f_1105
+  build_number: 1105
+  subdir: noarch
+  noarch: generic
+  url: https://conda.anaconda.org/conda-forge/noarch/libdrm-cos7-aarch64-2.4.97-h9b0a68f_1105.tar.bz2
+  sha256: f7ce96fc67340313cc29700f49c7d9b952b1da1557ae48034bb4c121ce896f12
+  md5: 914077c0d8d29b5adeda25859a014adb
+  depends:
+  - sysroot_linux-aarch64 2.17.*
+  license: MIT
+  license_family: MIT
+  size: 109564
+  timestamp: 1627531592421
+- kind: conda
+  name: libdrm-cos7-x86_64
+  version: 2.4.97
+  build: h9b0a68f_1105
+  build_number: 1105
+  subdir: noarch
+  noarch: generic
+  url: https://conda.anaconda.org/conda-forge/noarch/libdrm-cos7-x86_64-2.4.97-h9b0a68f_1105.tar.bz2
+  sha256: 9ccd7b539ec164ebe3ff8a511fa301ab7e6604f40d95a5f0b0bc5682267a8b8e
+  md5: 93b48dbb59766bddc742be8b9709961b
+  depends:
+  - sysroot_linux-64 2.17.*
+  license: MIT
+  license_family: MIT
+  size: 161138
+  timestamp: 1627494907863
+- kind: conda
   name: libedit
   version: 3.1.20191231
   build: h0678c8f_2
@@ -12520,6 +12601,291 @@ packages:
   license: LGPL-2.1-or-later
   size: 2630397
   timestamp: 1710939388253
+- kind: conda
+  name: libglu
+  version: 9.0.0
+  build: hac7e632_1003
+  build_number: 1003
+  subdir: linux-64
+  url: https://conda.anaconda.org/conda-forge/linux-64/libglu-9.0.0-hac7e632_1003.conda
+  sha256: 8368435c41105dc3e1c02896a02ecaa21b77d0b0d67fc8b06a16ba885c86f917
+  md5: 50c389a09b6b7babaef531eb7cb5e0ca
+  depends:
+  - libgcc-ng >=12
+  - libstdcxx-ng >=12
+  - libxcb >=1.15,<1.16.0a0
+  - xorg-libx11 >=1.8.6,<2.0a0
+  - xorg-libxext >=1.3.4,<2.0a0
+  - xorg-xextproto >=7.3.0,<8.0a0
+  license: SGI-2
+  size: 331249
+  timestamp: 1694431884320
+- kind: conda
+  name: libglu
+  version: 9.0.0
+  build: hf4b6fbe_1003
+  build_number: 1003
+  subdir: linux-aarch64
+  url: https://conda.anaconda.org/conda-forge/linux-aarch64/libglu-9.0.0-hf4b6fbe_1003.conda
+  sha256: fdb8b42c6e2ad5c70d7f05c4f4d87d20fa38468146e61ddf66cc42fdc5e99ef7
+  md5: 815755517215132a05c485e748449a38
+  depends:
+  - libgcc-ng >=12
+  - libstdcxx-ng >=12
+  - libxcb >=1.15,<1.16.0a0
+  - xorg-libx11 >=1.8.6,<2.0a0
+  - xorg-libxau >=1.0.11,<2.0a0
+  - xorg-libxext >=1.3.4,<2.0a0
+  - xorg-xextproto >=7.3.0,<8.0a0
+  license: SGI-2
+  size: 317590
+  timestamp: 1694431968293
+- kind: conda
+  name: libglvnd-core-devel-cos7-aarch64
+  version: 1.0.1
+  build: h9b0a68f_1105
+  build_number: 1105
+  subdir: noarch
+  noarch: generic
+  url: https://conda.anaconda.org/conda-forge/noarch/libglvnd-core-devel-cos7-aarch64-1.0.1-h9b0a68f_1105.tar.bz2
+  sha256: 0f1660da20d98a81138139a552171d72fa78fe26bc4576b617aa087972cddabb
+  md5: d24255eb3618b6a2d6231dc1b4b72c9c
+  depends:
+  - sysroot_linux-aarch64 2.17.*
+  license: MIT
+  license_family: MIT
+  size: 22289
+  timestamp: 1627527740861
+- kind: conda
+  name: libglvnd-core-devel-cos7-x86_64
+  version: 1.0.1
+  build: h9b0a68f_1105
+  build_number: 1105
+  subdir: noarch
+  noarch: generic
+  url: https://conda.anaconda.org/conda-forge/noarch/libglvnd-core-devel-cos7-x86_64-1.0.1-h9b0a68f_1105.tar.bz2
+  sha256: 6ed9aeb6d5b475cb02d2b9f28fca231ce1c3141c2b086442d49dd581291da20c
+  md5: d0bc379b8c2fec83d136ac36676147db
+  depends:
+  - sysroot_linux-64 2.17.*
+  license: MIT
+  license_family: MIT
+  size: 22309
+  timestamp: 1627496763566
+- kind: conda
+  name: libglvnd-cos7-aarch64
+  version: 1.0.1
+  build: h9b0a68f_1105
+  build_number: 1105
+  subdir: noarch
+  noarch: generic
+  url: https://conda.anaconda.org/conda-forge/noarch/libglvnd-cos7-aarch64-1.0.1-h9b0a68f_1105.tar.bz2
+  sha256: 64bde3de5635be7f89b0404c64c0da95b7dd18ec0d24f2e52aa0d8b2d1a60136
+  md5: bee4213b98f87755a109da633472f125
+  depends:
+  - sysroot_linux-aarch64 2.17.*
+  license: MIT
+  license_family: MIT
+  size: 126593
+  timestamp: 1627531271790
+- kind: conda
+  name: libglvnd-cos7-x86_64
+  version: 1.0.1
+  build: h9b0a68f_1105
+  build_number: 1105
+  subdir: noarch
+  noarch: generic
+  url: https://conda.anaconda.org/conda-forge/noarch/libglvnd-cos7-x86_64-1.0.1-h9b0a68f_1105.tar.bz2
+  sha256: c40dde62d3046779472abec5508f0d5b905bfc31696cfb7d3fb1e36fdee2a022
+  md5: 53cddbcee69dbec56e1ff6fd315bb411
+  depends:
+  - sysroot_linux-64 2.17.*
+  license: MIT
+  license_family: MIT
+  size: 133420
+  timestamp: 1627496448251
+- kind: conda
+  name: libglvnd-devel-cos7-aarch64
+  version: 1.0.1
+  build: h9b0a68f_1105
+  build_number: 1105
+  subdir: noarch
+  noarch: generic
+  url: https://conda.anaconda.org/conda-forge/noarch/libglvnd-devel-cos7-aarch64-1.0.1-h9b0a68f_1105.tar.bz2
+  sha256: 4223d929e2e9e01bde04e36e7eb26143f77bfee4e79e0462249047d326f2f0a4
+  md5: 0392e23b04f19a3e9e55ce1260e7af1a
+  depends:
+  - libglvnd-core-devel-cos7-aarch64 ==1.0.1 *_1105
+  - libglvnd-cos7-aarch64 ==1.0.1 *_1105
+  - libglvnd-egl-cos7-aarch64 ==1.0.1 *_1105
+  - libglvnd-gles-cos7-aarch64 ==1.0.1 *_1105
+  - libglvnd-glx-cos7-aarch64 ==1.0.1 *_1105
+  - libglvnd-opengl-cos7-aarch64 ==1.0.1 *_1105
+  - sysroot_linux-aarch64 2.17.*
+  license: MIT
+  license_family: MIT
+  size: 14728
+  timestamp: 1627541724208
+- kind: conda
+  name: libglvnd-devel-cos7-x86_64
+  version: 1.0.1
+  build: h9b0a68f_1105
+  build_number: 1105
+  subdir: noarch
+  noarch: generic
+  url: https://conda.anaconda.org/conda-forge/noarch/libglvnd-devel-cos7-x86_64-1.0.1-h9b0a68f_1105.tar.bz2
+  sha256: 14ba9da004f23a9d2483cdff54abe6f8a9982ef25388129aca6afb49dbc7f817
+  md5: 62b944caeb3346378370eba2f0d69974
+  depends:
+  - libglvnd-core-devel-cos7-x86_64 ==1.0.1 *_1105
+  - libglvnd-cos7-x86_64 ==1.0.1 *_1105
+  - libglvnd-egl-cos7-x86_64 ==1.0.1 *_1105
+  - libglvnd-gles-cos7-x86_64 ==1.0.1 *_1105
+  - libglvnd-glx-cos7-x86_64 ==1.0.1 *_1105
+  - libglvnd-opengl-cos7-x86_64 ==1.0.1 *_1105
+  - sysroot_linux-64 2.17.*
+  license: MIT
+  license_family: MIT
+  size: 14814
+  timestamp: 1627507120616
+- kind: conda
+  name: libglvnd-egl-cos7-aarch64
+  version: 1.0.1
+  build: h9b0a68f_1105
+  build_number: 1105
+  subdir: noarch
+  noarch: generic
+  url: https://conda.anaconda.org/conda-forge/noarch/libglvnd-egl-cos7-aarch64-1.0.1-h9b0a68f_1105.tar.bz2
+  sha256: 66de974d6bb3d19959bc374957fa39a764811495c6da5a226729eef8ac767ea4
+  md5: 11c48195648666014ae19f75c7dcadf4
+  depends:
+  - libglvnd-cos7-aarch64 ==1.0.1 *_1105
+  - mesa-libegl-cos7-aarch64 >=13.0.4 *_1105
+  - sysroot_linux-aarch64 2.17.*
+  license: MIT
+  license_family: MIT
+  size: 52797
+  timestamp: 1627540726043
+- kind: conda
+  name: libglvnd-egl-cos7-x86_64
+  version: 1.0.1
+  build: h9b0a68f_1105
+  build_number: 1105
+  subdir: noarch
+  noarch: generic
+  url: https://conda.anaconda.org/conda-forge/noarch/libglvnd-egl-cos7-x86_64-1.0.1-h9b0a68f_1105.tar.bz2
+  sha256: 0c920339496e8261169ae4dcff643eebd698743805e39a16e7b29b98a09f4ce7
+  md5: f6c25c37939d1f82a98594176a1e881f
+  depends:
+  - libglvnd-cos7-x86_64 ==1.0.1 *_1105
+  - mesa-libegl-cos7-x86_64 >=13.0.4 *_1105
+  - sysroot_linux-64 2.17.*
+  license: MIT
+  license_family: MIT
+  size: 52905
+  timestamp: 1627505938919
+- kind: conda
+  name: libglvnd-gles-cos7-aarch64
+  version: 1.0.1
+  build: h9b0a68f_1105
+  build_number: 1105
+  subdir: noarch
+  noarch: generic
+  url: https://conda.anaconda.org/conda-forge/noarch/libglvnd-gles-cos7-aarch64-1.0.1-h9b0a68f_1105.tar.bz2
+  sha256: ee2cbd44cc726d99b76f2b906fe37c503f2152d2b88ecbf4d22d8dd2a0d9e64c
+  md5: a9be1843442413fd30ece9236386b462
+  depends:
+  - libglvnd-cos7-aarch64 ==1.0.1 *_1105
+  - sysroot_linux-aarch64 2.17.*
+  license: MIT
+  license_family: MIT
+  size: 46078
+  timestamp: 1627533554674
+- kind: conda
+  name: libglvnd-gles-cos7-x86_64
+  version: 1.0.1
+  build: h9b0a68f_1105
+  build_number: 1105
+  subdir: noarch
+  noarch: generic
+  url: https://conda.anaconda.org/conda-forge/noarch/libglvnd-gles-cos7-x86_64-1.0.1-h9b0a68f_1105.tar.bz2
+  sha256: 16e3147cae64d2c5f45f13a51a96d79776bbad1e0aaad74b67e746387ea49ea8
+  md5: 4feeadd256e6afd6a20111ce8f595132
+  depends:
+  - libglvnd-cos7-x86_64 ==1.0.1 *_1105
+  - sysroot_linux-64 2.17.*
+  license: MIT
+  license_family: MIT
+  size: 46370
+  timestamp: 1627498179356
+- kind: conda
+  name: libglvnd-glx-cos7-aarch64
+  version: 1.0.1
+  build: h9b0a68f_1105
+  build_number: 1105
+  subdir: noarch
+  noarch: generic
+  url: https://conda.anaconda.org/conda-forge/noarch/libglvnd-glx-cos7-aarch64-1.0.1-h9b0a68f_1105.tar.bz2
+  sha256: 738acc9f090a84657cb22beffe475ddc0fec0328cad9819ea9800ac1edff4254
+  md5: c16ecb1dec60507d0027b4eb29d73ecd
+  depends:
+  - libglvnd-cos7-aarch64 ==1.0.1 *_1105
+  - sysroot_linux-aarch64 2.17.*
+  license: MIT
+  license_family: MIT
+  size: 175418
+  timestamp: 1627534299876
+- kind: conda
+  name: libglvnd-glx-cos7-x86_64
+  version: 1.0.1
+  build: h9b0a68f_1105
+  build_number: 1105
+  subdir: noarch
+  noarch: generic
+  url: https://conda.anaconda.org/conda-forge/noarch/libglvnd-glx-cos7-x86_64-1.0.1-h9b0a68f_1105.tar.bz2
+  sha256: a8e94f9278b1688bb7cfe3625ed1ce5ae798bd31b3ca3cfdf5863f6283816be0
+  md5: f2ab4d3bd5f80ea4a30d5e35b90b6656
+  depends:
+  - libglvnd-cos7-x86_64 ==1.0.1 *_1105
+  - sysroot_linux-64 2.17.*
+  license: MIT
+  license_family: MIT
+  size: 180318
+  timestamp: 1627502249243
+- kind: conda
+  name: libglvnd-opengl-cos7-aarch64
+  version: 1.0.1
+  build: h9b0a68f_1105
+  build_number: 1105
+  subdir: noarch
+  noarch: generic
+  url: https://conda.anaconda.org/conda-forge/noarch/libglvnd-opengl-cos7-aarch64-1.0.1-h9b0a68f_1105.tar.bz2
+  sha256: a91a34f5dd5bf06f09d4811ddb0c5114f65fd2ad039adfe8c02dbc00d95d2f4d
+  md5: df8476290fb63f4fbf95d2987e661e8e
+  depends:
+  - libglvnd-cos7-aarch64 ==1.0.1 *_1105
+  - sysroot_linux-aarch64 2.17.*
+  license: MIT
+  license_family: MIT
+  size: 61435
+  timestamp: 1627536208693
+- kind: conda
+  name: libglvnd-opengl-cos7-x86_64
+  version: 1.0.1
+  build: h9b0a68f_1105
+  build_number: 1105
+  subdir: noarch
+  noarch: generic
+  url: https://conda.anaconda.org/conda-forge/noarch/libglvnd-opengl-cos7-x86_64-1.0.1-h9b0a68f_1105.tar.bz2
+  sha256: 8cf3adc7eec55af6c7fdd87b379c71d5b74a6adc6f0dc91930c5c1f673f6a518
+  md5: c81196f3a5364e7e982b0286dc3ca02e
+  depends:
+  - libglvnd-cos7-x86_64 ==1.0.1 *_1105
+  - sysroot_linux-64 2.17.*
+  license: MIT
+  license_family: MIT
+  size: 62116
+  timestamp: 1627499423237
 - kind: conda
   name: libgomp
   version: 13.2.0
@@ -17134,6 +17500,250 @@ packages:
   size: 253227
   timestamp: 1602706492919
 - kind: conda
+  name: mesa-khr-devel-cos7-aarch64
+  version: 18.3.4
+  build: h9b0a68f_1105
+  build_number: 1105
+  subdir: noarch
+  noarch: generic
+  url: https://conda.anaconda.org/conda-forge/noarch/mesa-khr-devel-cos7-aarch64-18.3.4-h9b0a68f_1105.tar.bz2
+  sha256: 7552d5f8501c37515c7091feb62b9bbc0475a4689b0ddea9a9d3399db07a41dc
+  md5: b1a9cc096978fd4336e156c7448bdb9c
+  depends:
+  - sysroot_linux-aarch64 2.17.*
+  license: MIT
+  license_family: MIT
+  size: 7666
+  timestamp: 1627528055206
+- kind: conda
+  name: mesa-khr-devel-cos7-x86_64
+  version: 18.3.4
+  build: h9b0a68f_1105
+  build_number: 1105
+  subdir: noarch
+  noarch: generic
+  url: https://conda.anaconda.org/conda-forge/noarch/mesa-khr-devel-cos7-x86_64-18.3.4-h9b0a68f_1105.tar.bz2
+  sha256: 2a7bf7d5493e312747827ab78997f063861c0989b50fc121070bc5623907a5f5
+  md5: c2e7b967a47f1ed33b6ad16268986ee1
+  depends:
+  - sysroot_linux-64 2.17.*
+  license: MIT
+  license_family: MIT
+  size: 7694
+  timestamp: 1627497668341
+- kind: conda
+  name: mesa-libegl-cos7-aarch64
+  version: 18.3.4
+  build: h9b0a68f_1105
+  build_number: 1105
+  subdir: noarch
+  noarch: generic
+  url: https://conda.anaconda.org/conda-forge/noarch/mesa-libegl-cos7-aarch64-18.3.4-h9b0a68f_1105.tar.bz2
+  sha256: 7ef401cbe0da3045c44f499fdaa1668e6587193163cb2531504ae6b442a84054
+  md5: 736f6cdb85cd0eb993d222f62e6c443e
+  depends:
+  - mesa-libgbm-cos7-aarch64 ==18.3.4 *_1105
+  - sysroot_linux-aarch64 2.17.*
+  license: MIT
+  license_family: MIT
+  size: 110876
+  timestamp: 1627537765695
+- kind: conda
+  name: mesa-libegl-cos7-x86_64
+  version: 18.3.4
+  build: h9b0a68f_1105
+  build_number: 1105
+  subdir: noarch
+  noarch: generic
+  url: https://conda.anaconda.org/conda-forge/noarch/mesa-libegl-cos7-x86_64-18.3.4-h9b0a68f_1105.tar.bz2
+  sha256: c8eea65cf45978a4554fefca2af17725ae1edb7ee2fa1960f7345e1f5371e614
+  md5: c0057ef5818cafdd295a68bbf4a3ed6f
+  depends:
+  - mesa-libgbm-cos7-x86_64 ==18.3.4 *_1105
+  - sysroot_linux-64 2.17.*
+  license: MIT
+  license_family: MIT
+  size: 112399
+  timestamp: 1627504564196
+- kind: conda
+  name: mesa-libegl-devel-cos7-aarch64
+  version: 18.3.4
+  build: h9b0a68f_1105
+  build_number: 1105
+  subdir: noarch
+  noarch: generic
+  url: https://conda.anaconda.org/conda-forge/noarch/mesa-libegl-devel-cos7-aarch64-18.3.4-h9b0a68f_1105.tar.bz2
+  sha256: 9edd90ed06e7b95f55e00b473f84d107a4e30c1fcc3d87c960bb9687d0ea3ac7
+  md5: 8f1eb678a7d55de88a18be3e714b1295
+  depends:
+  - mesa-khr-devel-cos7-aarch64 ==18.3.4 *_1105
+  - mesa-libegl-cos7-aarch64 ==18.3.4 *_1105
+  - sysroot_linux-aarch64 2.17.*
+  license: MIT
+  license_family: MIT
+  size: 20016
+  timestamp: 1627540322208
+- kind: conda
+  name: mesa-libegl-devel-cos7-x86_64
+  version: 18.3.4
+  build: h9b0a68f_1105
+  build_number: 1105
+  subdir: noarch
+  noarch: generic
+  url: https://conda.anaconda.org/conda-forge/noarch/mesa-libegl-devel-cos7-x86_64-18.3.4-h9b0a68f_1105.tar.bz2
+  sha256: 326602cbdd700f95f052a0c01ac9af64e41908250d62d971ec13beac01dbd543
+  md5: 80314954275d3c48b34b2f216217e954
+  depends:
+  - mesa-khr-devel-cos7-x86_64 ==18.3.4 *_1105
+  - mesa-libegl-cos7-x86_64 ==18.3.4 *_1105
+  - sysroot_linux-64 2.17.*
+  license: MIT
+  license_family: MIT
+  size: 20079
+  timestamp: 1627506329741
+- kind: conda
+  name: mesa-libgbm-cos7-aarch64
+  version: 18.3.4
+  build: h9b0a68f_1105
+  build_number: 1105
+  subdir: noarch
+  noarch: generic
+  url: https://conda.anaconda.org/conda-forge/noarch/mesa-libgbm-cos7-aarch64-18.3.4-h9b0a68f_1105.tar.bz2
+  sha256: 70805e440bbccb3e069707567609d17f69a0a18db414809744876a3d3e033e04
+  md5: 5bee3d6174dfd97713cffb608b990dc1
+  depends:
+  - libdrm-cos7-aarch64 >=2.4.83 *_1105
+  - mesa-libglapi-cos7-aarch64 ==18.3.4 *_1105
+  - sysroot_linux-aarch64 2.17.*
+  license: MIT
+  license_family: MIT
+  size: 32690
+  timestamp: 1627535067680
+- kind: conda
+  name: mesa-libgbm-cos7-x86_64
+  version: 18.3.4
+  build: h9b0a68f_1105
+  build_number: 1105
+  subdir: noarch
+  noarch: generic
+  url: https://conda.anaconda.org/conda-forge/noarch/mesa-libgbm-cos7-x86_64-18.3.4-h9b0a68f_1105.tar.bz2
+  sha256: bc43fc4ed1b07991e5597386e0a9cbbf5dc1e577026b84c57e09c0671656c685
+  md5: d4257e612733f6a1e04bccff55f256e9
+  depends:
+  - libdrm-cos7-x86_64 >=2.4.83 *_1105
+  - mesa-libglapi-cos7-x86_64 ==18.3.4 *_1105
+  - sysroot_linux-64 2.17.*
+  license: MIT
+  license_family: MIT
+  size: 32590
+  timestamp: 1627501160814
+- kind: conda
+  name: mesa-libgl-cos7-aarch64
+  version: 18.3.4
+  build: h9b0a68f_1105
+  build_number: 1105
+  subdir: noarch
+  noarch: generic
+  url: https://conda.anaconda.org/conda-forge/noarch/mesa-libgl-cos7-aarch64-18.3.4-h9b0a68f_1105.tar.bz2
+  sha256: 95fffa81d3cbefec866cfe07694325a6e4fd0b3597ba7e71df0f1e971131b276
+  md5: f5df93fb9a7682c20d17b5d59e840e5a
+  depends:
+  - libdrm-cos7-aarch64 >=2.4.83 *_1105
+  - libglvnd-glx-cos7-aarch64 >=1.0.1 *_1105
+  - mesa-libglapi-cos7-aarch64 ==18.3.4 *_1105
+  - sysroot_linux-aarch64 2.17.*
+  license: MIT
+  license_family: MIT
+  size: 204697
+  timestamp: 1627537783824
+- kind: conda
+  name: mesa-libgl-cos7-x86_64
+  version: 18.3.4
+  build: h9b0a68f_1105
+  build_number: 1105
+  subdir: noarch
+  noarch: generic
+  url: https://conda.anaconda.org/conda-forge/noarch/mesa-libgl-cos7-x86_64-18.3.4-h9b0a68f_1105.tar.bz2
+  sha256: 3a9f338ed78a9822df8c7401afa40c0ea90e1bb518b592c2c9e2ad159653b851
+  md5: 3b511d6b02927dae6dff0f2aa9236396
+  depends:
+  - libdrm-cos7-x86_64 >=2.4.83 *_1105
+  - libglvnd-glx-cos7-x86_64 >=1.0.1 *_1105
+  - mesa-libglapi-cos7-x86_64 ==18.3.4 *_1105
+  - sysroot_linux-64 2.17.*
+  license: MIT
+  license_family: MIT
+  size: 188461
+  timestamp: 1627504549627
+- kind: conda
+  name: mesa-libgl-devel-cos7-aarch64
+  version: 18.3.4
+  build: h9b0a68f_1105
+  build_number: 1105
+  subdir: noarch
+  noarch: generic
+  url: https://conda.anaconda.org/conda-forge/noarch/mesa-libgl-devel-cos7-aarch64-18.3.4-h9b0a68f_1105.tar.bz2
+  sha256: 121655bb2626c7d37a4ca4ea261a036f774a1c1fe6333173e4ef83275a08b417
+  md5: 5e1770ecd2a3f9eaca61fa2b76df3e67
+  depends:
+  - mesa-khr-devel-cos7-aarch64 ==18.3.4 *_1105
+  - mesa-libgl-cos7-aarch64 ==18.3.4 *_1105
+  - sysroot_linux-aarch64 2.17.*
+  license: MIT
+  license_family: MIT
+  size: 166232
+  timestamp: 1627539931158
+- kind: conda
+  name: mesa-libgl-devel-cos7-x86_64
+  version: 18.3.4
+  build: h9b0a68f_1105
+  build_number: 1105
+  subdir: noarch
+  noarch: generic
+  url: https://conda.anaconda.org/conda-forge/noarch/mesa-libgl-devel-cos7-x86_64-18.3.4-h9b0a68f_1105.tar.bz2
+  sha256: e5e07a6fe0d247fc3f41a850acbc62e97ac8a91092d07903ceb2dad49562965d
+  md5: 131a142c4ba69a4a1ae3588a8543d00e
+  depends:
+  - mesa-khr-devel-cos7-x86_64 ==18.3.4 *_1105
+  - mesa-libgl-cos7-x86_64 ==18.3.4 *_1105
+  - sysroot_linux-64 2.17.*
+  license: MIT
+  license_family: MIT
+  size: 166770
+  timestamp: 1627506512871
+- kind: conda
+  name: mesa-libglapi-cos7-aarch64
+  version: 18.3.4
+  build: h9b0a68f_1105
+  build_number: 1105
+  subdir: noarch
+  noarch: generic
+  url: https://conda.anaconda.org/conda-forge/noarch/mesa-libglapi-cos7-aarch64-18.3.4-h9b0a68f_1105.tar.bz2
+  sha256: 90a3bc44e7ae297324b545d8851cd70ad79d620f91dac2b220929fbd7be12231
+  md5: 2701483c99c4b70997194d3b163f5dc1
+  depends:
+  - sysroot_linux-aarch64 2.17.*
+  license: MIT
+  license_family: MIT
+  size: 70737
+  timestamp: 1627530610245
+- kind: conda
+  name: mesa-libglapi-cos7-x86_64
+  version: 18.3.4
+  build: h9b0a68f_1105
+  build_number: 1105
+  subdir: noarch
+  noarch: generic
+  url: https://conda.anaconda.org/conda-forge/noarch/mesa-libglapi-cos7-x86_64-18.3.4-h9b0a68f_1105.tar.bz2
+  sha256: 2eb8503f0f14692f46a767c108f95a12c3871dfcd23cb1988441b1d31233f93c
+  md5: 4e400eb4ecbcd7d69cdbb5c761e348ae
+  depends:
+  - sysroot_linux-64 2.17.*
+  license: MIT
+  license_family: MIT
+  size: 46161
+  timestamp: 1627493667796
+- kind: conda
   name: minizip
   version: 4.0.5
   build: h0ab5242_0
@@ -21371,20 +21981,23 @@ packages:
   timestamp: 1708777829963
 - kind: conda
   name: sysroot_linux-64
-  version: '2.12'
-  build: he073ed8_17
-  build_number: 17
+  version: '2.17'
+  build: h4a8ded7_14
+  build_number: 14
   subdir: noarch
   noarch: generic
-  url: https://conda.anaconda.org/conda-forge/noarch/sysroot_linux-64-2.12-he073ed8_17.conda
-  sha256: b4e4d685e41cb36cfb16f0cb15d2c61f8f94f56fab38987a44eff95d8a673fb5
-  md5: 595db67e32b276298ff3d94d07d47fbf
+  url: https://conda.anaconda.org/conda-forge/noarch/sysroot_linux-64-2.17-h4a8ded7_14.conda
+  sha256: af0f9ed466f97e3910c1d867ab44c974e01383cb408baa38606265964c7f0857
+  md5: d5f7a1cca06f56e6ac2b525f199f9b9e
   depends:
-  - kernel-headers_linux-64 2.6.32 he073ed8_17
+  - _sysroot_linux-64_curr_repodata_hack 3.*
+  - kernel-headers_linux-64 3.10.0 h4a8ded7_14
+  track_features:
+  - sysroot_linux-64_2.17
   license: LGPL-2.0-or-later AND LGPL-2.0-or-later WITH exceptions AND GPL-2.0-or-later AND MPL-2.0
   license_family: GPL
-  size: 15127123
-  timestamp: 1708000843849
+  size: 16117734
+  timestamp: 1708000820669
 - kind: conda
   name: sysroot_linux-aarch64
   version: '2.17'
