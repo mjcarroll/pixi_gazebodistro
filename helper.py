@@ -30,13 +30,19 @@ import urllib.request
 
 def sync(args, rem_args):
     from vcstool.commands.vcs import main as vcs_main
-    if not os.path.exists(f'{args.distro}_ws/src'):
-        os.makedirs(os.path.join(args.curdir, f'{args.distro}_ws/src'))
-    urllib.request.urlretrieve(
+    workspace_name = f'{args.distro}_ws'
+    if args.repos_file:
+        repos_file = args.repos_file
+    else:
+        repos_file = f'{workspace_name}/gazebodistro.repos'
+        urllib.request.urlretrieve(
             f'https://raw.githubusercontent.com/gazebo-tooling/gazebodistro/master/collection-{args.distro}.yaml',
-            f'{args.distro}_ws/gazebodistro.repos')
+            repos_file)
 
-    argv = ['import', '--input', f'{args.distro}_ws/gazebodistro.repos', *rem_args, f'{args.distro}_ws/src']
+    if not os.path.exists(f'{workspace_name}/src'):
+        os.makedirs(os.path.join(args.curdir, f'{workspace_name}/src'))
+
+    argv = ['import', '--input', repos_file, *rem_args, f'{workspace_name}/src']
     return vcs_main(argv)
 
 
@@ -59,7 +65,10 @@ if __name__ == "__main__":
     # Read some configuration defaults from the toml file
     with open('gazebo.toml', 'rb') as f:
         data = tomllib.load(f)
-        defaults = data['ros']
+        defaults = data['gazebo']
+
+        if 'repos_file' not in defaults:
+            defaults['repos_file'] = None
 
     parser = argparse.ArgumentParser(
                     prog='Pixi Task Helper',
@@ -67,6 +76,7 @@ if __name__ == "__main__":
 
     parser.add_argument('--distro', type=str, default=defaults['distro'])
     parser.add_argument('--colcon-defaults', type=str, default=defaults['colcon_defaults'])
+    parser.add_argument('--repos-file', type=str, default=defaults['repos_file'])
 
     subparsers = parser.add_subparsers()
     sync_parser = subparsers.add_parser('sync')
