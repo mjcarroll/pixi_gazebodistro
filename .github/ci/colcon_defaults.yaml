@@ -6,6 +6,10 @@
       "--no-warn-unused-cli",
       "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
       "-DCMAKE_BUILD_WITH_INSTALL_RPATH=ON",
+      # BFD in conda is not compiled with fPIC
+      "-DSTACK_DETAILS_AUTO_DETECT:BOOL=FALSE",
+      "-DSTACK_DETAILS_BFD:BOOL=FALSE",
+
     ],
     "event-handlers": [
       "console_cohesion+",
