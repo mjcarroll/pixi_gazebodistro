@@ -43,6 +43,7 @@ libglu = "*"
 mesa-libgl-devel-cos7-x86_64 = "*"
 mesa-libegl-devel-cos7-x86_64 = "*"
 libglvnd-devel-cos7-x86_64 = "*"
+vulkan-headers = "*"
 
 [target.linux-aarch64.dependencies]
 libglu = "*"
