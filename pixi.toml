@@ -44,7 +44,7 @@ mesa-libgl-devel-cos7-x86_64 = "*"
 mesa-libegl-devel-cos7-x86_64 = "*"
 libglvnd-devel-cos7-x86_64 = "*"
 vulkan-headers = "*"
-libwebsockets = ">=4.3.3,<4.4"
+libwebsockets = "*"
 
 [target.linux-aarch64.dependencies]
 libglu = "*"

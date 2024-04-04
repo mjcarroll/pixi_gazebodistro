@@ -12,7 +12,8 @@
       # BFD in conda is not compiled with fPIC
       "-DSTACK_DETAILS_AUTO_DETECT:BOOL=FALSE",
       "-DSTACK_DETAILS_BFD:BOOL=FALSE",
-
+      # Docs not necessary
+      "-DBUILD_DOCS:BOOL=FALSE"
     ],
     "event-handlers": [
       "console_cohesion+",
