@@ -33,4 +33,16 @@ jobs:
           echo "BUILDCACHE_CC=x86_64-conda-linux-gnu-gcc" >> $GITHUB_ENV
           echo "BUILDCACHE_CXX=x86_64-conda-linux-gnu-g++" >> $GITHUB_ENV
 
-      - run: pixi run build --cmake-args -DCMAKE_C_COMPILER=$BUILDCACHE_CC -DCMAKE_CXX_COMPILER=$BUILDCACHE_CXX
+      - run: |
+          pixi run build --cmake-args \
+            -GNinja \
+            --no-warn-unused-cli \
+            -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+            -DCMAKE_BUILD_WITH_INSTALL_RPATH=ON \
+            -DCMAKE_C_COMPILER_LAUNCHER=buildcache \
+            -DCMAKE_CXX_COMPILER_LAUNCHER=buildcache \
+            -DSTACK_DETAILS_AUTO_DETECT:BOOL=FALSE \
+            -DSTACK_DETAILS_BFD:BOOL=FALSE \
+            -DBUILD_DOCS:BOOL=FALSE \
+            -DCMAKE_C_COMPILER=$BUILDCACHE_CC \
+            -DCMAKE_CXX_COMPILER=$BUILDCACHE_CXX
