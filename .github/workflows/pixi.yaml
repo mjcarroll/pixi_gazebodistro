@@ -32,6 +32,8 @@ jobs:
         run: |
           echo "BUILDCACHE_CC=x86_64-conda-linux-gnu-gcc" >> $GITHUB_ENV
           echo "BUILDCACHE_CXX=x86_64-conda-linux-gnu-g++" >> $GITHUB_ENV
+          echo "CMAKE_C_COMPILER_LAUNCHER=buildcache" >> $GITHUB_ENV
+          echo "CMAKE_CXX_COMPILER_LAUNCHER=buildcache" >> $GITHUB_ENV
 
       - run: |
           pixi run build --cmake-args \
