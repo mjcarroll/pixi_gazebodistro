@@ -19,6 +19,22 @@ jobs:
       # BUILDCACHE_DEBUG: 2                                        # optional: debug level, less is more
       BUILDCACHE_DIRECT_MODE: true                                 # optional: Allow direct caching
     steps:
+      - name: "Set node id (issue)"
+        if: ${{ github.event.action == 'opened' }}
+        run: |
+          echo "NODE_ID=${{ github.event.issue.node_id }}" >> "$GITHUB_ENV"
+
+      - name: "Set node id (comment)"
+        if: ${{ github.event.action == 'created' }}
+        run: |
+          echo "NODE_ID=${{ github.event.comment.node_id }}" >> "$GITHUB_ENV"
+
+      - name: "React"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh api graphql --silent --raw-field query="mutation AddReaction {addReaction(input:{subjectId:\"$NODE_ID\",content:EYES}){reaction{content}subject{id}}}"
+
       - uses: actions/checkout@v4
       - uses: prefix-dev/setup-pixi@v0.5.1
         with:
@@ -36,21 +52,6 @@ jobs:
         run: |
           echo $EVENT_CONTEXT
 
-      - name: "Set node id (issue)"
-        if: ${{ github.event.action == 'opened' }}
-        run: |
-          echo "NODE_ID=${{ github.event.issue.node_id }}" >> "$GITHUB_ENV"
-
-      - name: "Set node id (comment)"
-        if: ${{ github.event.action == 'created' }}
-        run: |
-          echo "NODE_ID=${{ github.event.comment.node_id }}" >> "$GITHUB_ENV"
-
-      - name: "React"
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          gh api graphql --silent --raw-field query="mutation AddReaction {addReaction(input:{subjectId:\"$NODE_ID\",content:EYES}){reaction{content}subject{id}}}"
 
       - name: "Parse issue body"
         if: ${{ github.event.action == 'opened' }}
