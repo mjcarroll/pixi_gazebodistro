@@ -1,0 +1,142 @@
+name: My Comment-based Pipeline
+on:
+  issues:
+    types: [opened]
+  issue_comment:
+    types: [created]
+
+jobs:
+  pixi-build:
+    name: Build workspace on-demand
+    permissions: write-all
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    env:
+      BUILDCACHE_MAX_CACHE_SIZE: 2000000000                        # optional: Need a bigger cache?
+      # BUILDCACHE_LOG_FILE: ${{ matrix.label }}.buildcache.log    # optional: include log output
+      # BUILDCACHE_DEBUG: 2                                        # optional: debug level, less is more
+      BUILDCACHE_DIRECT_MODE: true                                 # optional: Allow direct caching
+    steps:
+      - uses: actions/checkout@v4
+      - uses: prefix-dev/setup-pixi@v0.5.1
+        with:
+          pixi-version: v0.17.1
+          cache: true
+
+      - uses: mjcarroll/buildcache-action@v2
+        with:
+          cache_key: ${{ matrix.label }}
+          upload_buildcache_log: 'false'
+          zero_buildcache_stats: 'true'
+
+      - env:
+          EVENT_CONTEXT: ${{ toJSON(github.event) }}
+        run: |
+          echo $EVENT_CONTEXT
+
+      - name: "Set node id (issue)"
+        if: ${{ github.event.action }} == "opened"
+        run: |
+          echo "NODE_ID=${{ github.event.issue.node_id }}" >> "$GITHUB_ENV"
+
+      - name: "Set node id (comment)"
+        if: ${{ github.event.action }} == "created"
+        run: |
+          echo "NODE_ID=${{ github.event.comment.node_id }}" >> "$GITHUB_ENV"
+
+      - name: "React"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh api graphql --silent --raw-field query="mutation AddReaction {addReaction(input:{subjectId:\"$NODE_ID\",content:EYES}){reaction{content}subject{id}}}"
+
+      - name: "Parse issue body"
+        if: ${{ github.event.action }} == "opened"
+        env:
+          COMMENT_BODY: ${{ github.event.issue.body }}
+        run: |
+          .github/parse_comment.py
+
+      - name: "Parse comment body"
+        if: ${{ github.event.action }} == "created"
+        env:
+          COMMENT_BODY: ${{ github.event.comment.body }}
+        run: |
+          .github/parse_comment.py
+
+      - run: pixi run sync --repos-uri $REPOS
+
+      - name: Export compiler variables [Linux]
+        if: contains(matrix.os, 'ubuntu')
+        shell: bash -l {0}
+        run: |
+          echo "BUILDCACHE_CC=x86_64-conda-linux-gnu-gcc" >> $GITHUB_ENV
+          echo "BUILDCACHE_CXX=x86_64-conda-linux-gnu-g++" >> $GITHUB_ENV
+          echo "CMAKE_C_COMPILER_LAUNCHER=buildcache" >> $GITHUB_ENV
+          echo "CMAKE_CXX_COMPILER_LAUNCHER=buildcache" >> $GITHUB_ENV
+
+      - run: |
+          pixi run build --cmake-args \
+            -GNinja \
+            --no-warn-unused-cli \
+            -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+            -DCMAKE_BUILD_WITH_INSTALL_RPATH=ON \
+            -DCMAKE_C_COMPILER_LAUNCHER=buildcache \
+            -DCMAKE_CXX_COMPILER_LAUNCHER=buildcache \
+            -DSTACK_DETAILS_AUTO_DETECT:BOOL=FALSE \
+            -DSTACK_DETAILS_BFD:BOOL=FALSE \
+            -DBUILD_DOCS:BOOL=FALSE \
+            -DCMAKE_C_COMPILER=$BUILDCACHE_CC \
+            -DCMAKE_CXX_COMPILER=$BUILDCACHE_CXX \
+            $COLCON_BUILD_ARGS
+
+      - name: "Notify on success"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh api graphql --silent --raw-field query="mutation AddReaction {addReaction(input:{subjectId:\"$NODE_ID\",content:THUMBS_UP}){reaction{content}subject{id}}}"
+          gh api graphql --silent --raw-field query="mutation RemoveReaction {removeReaction(input:{subjectId:\"$NODE_ID\",content:EYES}){reaction{content}subject{id}}}"
+          (
+            echo "**Success: ${{ github.workflow }}**"
+            echo "REPOS_FILE: ${REPOS}"
+            echo "COLCON_ARGS: ${COLCON_ARGS}"
+            echo "COLCON_BUILD_ARGS: ${COLCON_BUILD_ARGS}"
+            echo "COLCON_TEST_ARGS: ${COLCON_BUILD_ARGS}"
+            echo "You can find the workflow here:"
+            echo "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          ) | \
+          gh issue comment "${{ github.event.issue.number }}" --repo ${{ github.repository }} -F -
+
+
+  notify-job:
+    needs: [pixi-build]
+    if: ${{ always() && contains(needs.*.result, 'failure') }}
+    runs-on: ubuntu-latest
+    name: Report workspace failure
+    permissions: write-all
+    steps:
+      - uses: actions/checkout@v4
+      - name: "Set node id (issue)"
+        if: ${{ github.event.action }} == "opened"
+        run: |
+          echo "NODE_ID=${{ github.event.issue.node_id }}" >> "$GITHUB_ENV"
+
+      - name: "Set node id (comment)"
+        if: ${{ github.event.action }} == "created"
+        run: |
+          echo "NODE_ID=${{ github.event.comment.node_id }}" >> "$GITHUB_ENV"
+
+      - name: "Notify on failure"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh api graphql --silent --raw-field query="mutation AddReaction {addReaction(input:{subjectId:\"$NODE_ID\",content:THUMBS_DOWN}){reaction{content}subject{id}}}"
+          gh api graphql --silent --raw-field query="mutation RemoveReaction {removeReaction(input:{subjectId:\"$NODE_ID\",content:EYES}){reaction{content}subject{id}}}"
+          (
+            echo "**Failed : ${{ github.workflow }}**"
+            echo "You can find the workflow here:"
+            echo "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          ) | \
+          gh issue comment "${{ github.event.issue.number }}" --repo ${{ github.repository }} -F -
