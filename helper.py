@@ -24,62 +24,57 @@ import argparse
 import os
 import shutil
 import sys
-import tomllib
 import urllib.request
 
+WORKSPACE_NAME = 'gazebosim_ws'
+COLCON_DEFAULTS_FILE = '.github/ci/colcon_defaults.yaml'
+DEFAULT_COLLECTION = 'collection-ionic.yaml'
 
 def sync(args, rem_args):
     from vcstool.commands.vcs import main as vcs_main
-    workspace_name = f'{args.distro}_ws'
-    if args.repos_file:
-        repos_file = args.repos_file
-    else:
-        repos_file = f'{workspace_name}/gazebodistro.repos'
-        urllib.request.urlretrieve(
-            f'https://raw.githubusercontent.com/gazebo-tooling/gazebodistro/master/collection-{args.distro}.yaml',
-            repos_file)
 
-    if not os.path.exists(f'{workspace_name}/src'):
-        os.makedirs(os.path.join(args.curdir, f'{workspace_name}/src'))
+    uri = f'https://raw.githubusercontent.com/gazebo-tooling/gazebodistro/master/{args.collection}'
+    if args.repos_uri:
+        uri = args.repos_uri
 
-    argv = ['import', '--input', repos_file, *rem_args, f'{workspace_name}/src']
+    if not os.path.exists(f'{args.workspace_name}/src'):
+        os.makedirs(os.path.join(args.curdir, f'{args.workspace_name}/src'))
+
+    repos_file = f'{args.workspace_name}/workspace.repos'
+    print(f'Fetching: {uri}')
+    urllib.request.urlretrieve(uri, repos_file)
+
+    argv = ['import', '--input', repos_file, *rem_args, f'{args.workspace_name}/src']
     return vcs_main(argv)
 
 
 def colcon(args, rem_args):
     from colcon_core.command import main as colcon_main
     os.environ["COLCON_DEFAULTS_FILE"] = os.path.join(args.curdir, args.colcon_defaults)
-    os.chdir(os.path.join(args.curdir, f'{args.distro}_ws'))
+    os.chdir(os.path.join(args.curdir, f'{args.workspace_name}'))
     return colcon_main(argv=rem_args)
 
 
 def clean(args, rem_args):
     for subdir in ['build', 'install', 'log']:
         try:
-            shutil.rmtree(os.path.join(os.curdir, f'{args.distro}_ws/{subdir}'))
+            shutil.rmtree(os.path.join(os.curdir, f'{args.workspace_name}/{subdir}'))
         except Exception as ex:
             print(ex)
 
 
 if __name__ == "__main__":
-    # Read some configuration defaults from the toml file
-    with open('gazebo.toml', 'rb') as f:
-        data = tomllib.load(f)
-        defaults = data['gazebo']
-
-        if 'repos_file' not in defaults:
-            defaults['repos_file'] = None
-
     parser = argparse.ArgumentParser(
                     prog='Pixi Task Helper',
                     description='Help with common pixi tasks')
 
-    parser.add_argument('--distro', type=str, default=defaults['distro'])
-    parser.add_argument('--colcon-defaults', type=str, default=defaults['colcon_defaults'])
-    parser.add_argument('--repos-file', type=str, default=defaults['repos_file'])
+    parser.add_argument('--workspace-name', type=str, default=WORKSPACE_NAME)
+    parser.add_argument('--colcon-defaults', type=str, default=COLCON_DEFAULTS_FILE)
 
     subparsers = parser.add_subparsers()
     sync_parser = subparsers.add_parser('sync')
+    sync_parser.add_argument('--collection', type=str, default=DEFAULT_COLLECTION)
+    sync_parser.add_argument('--repos-uri', type=str)
     sync_parser.set_defaults(func=sync)
 
     colcon_parser = subparsers.add_parser('colcon')
@@ -89,5 +84,6 @@ if __name__ == "__main__":
     clean_parser.set_defaults(func=clean)
 
     args, rem_args = parser.parse_known_args()
+
     args.curdir = os.path.abspath(os.path.curdir)
     sys.exit(args.func(args, rem_args))
