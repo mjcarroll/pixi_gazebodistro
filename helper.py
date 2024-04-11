@@ -51,7 +51,7 @@ def sync(args, rem_args):
 def colcon(args, rem_args):
     from colcon_core.command import main as colcon_main
     os.environ["COLCON_DEFAULTS_FILE"] = os.path.join(args.curdir, args.colcon_defaults)
-    os.chdir(os.path.join(args.curdir, f'{args.distro}_ws'))
+    os.chdir(os.path.join(args.curdir, f'{args.workspace_name}'))
     return colcon_main(argv=rem_args)
 
 
