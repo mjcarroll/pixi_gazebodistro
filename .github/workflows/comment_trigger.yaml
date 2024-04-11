@@ -37,12 +37,12 @@ jobs:
           echo $EVENT_CONTEXT
 
       - name: "Set node id (issue)"
-        if: ${{ github.event.action }} == "opened"
+        if: ${{ github.event.action == 'opened' }}
         run: |
           echo "NODE_ID=${{ github.event.issue.node_id }}" >> "$GITHUB_ENV"
 
       - name: "Set node id (comment)"
-        if: ${{ github.event.action }} == "created"
+        if: ${{ github.event.action == 'created' }}
         run: |
           echo "NODE_ID=${{ github.event.comment.node_id }}" >> "$GITHUB_ENV"
 
@@ -53,14 +53,14 @@ jobs:
           gh api graphql --silent --raw-field query="mutation AddReaction {addReaction(input:{subjectId:\"$NODE_ID\",content:EYES}){reaction{content}subject{id}}}"
 
       - name: "Parse issue body"
-        if: ${{ github.event.action }} == "opened"
+        if: ${{ github.event.action == 'opened' }}
         env:
           COMMENT_BODY: ${{ github.event.issue.body }}
         run: |
           .github/parse_comment.py
 
       - name: "Parse comment body"
-        if: ${{ github.event.action }} == "created"
+        if: ${{ github.event.action == 'created' }}
         env:
           COMMENT_BODY: ${{ github.event.comment.body }}
         run: |
@@ -119,12 +119,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: "Set node id (issue)"
-        if: ${{ github.event.action }} == "opened"
+        if: ${{ github.event.action == 'opened' }}
         run: |
           echo "NODE_ID=${{ github.event.issue.node_id }}" >> "$GITHUB_ENV"
 
       - name: "Set node id (comment)"
-        if: ${{ github.event.action }} == "created"
+        if: ${{ github.event.action == 'created' }}
         run: |
           echo "NODE_ID=${{ github.event.comment.node_id }}" >> "$GITHUB_ENV"
 
